@@ -1,0 +1,266 @@
+.container {
+    background-color: #151515;
+    min-height: calc(100vh - 50px);
+    color: white;
+  }
+  
+  .content-container {
+    margin-left: 50px;
+  }
+  
+  .featured-content {
+    height: 51vh;
+    padding: 50px;
+  }
+  
+  .featured-title {
+    width: 200px;
+  }
+  
+  .featured-desc {
+    width: 500px;
+    color: lightgray;
+    margin: 30px 0;
+  }
+  
+  .featured-button {
+    background-color: #4dbf00;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+  }
+  
+  .movie-list-container {
+    padding: 0 20px;
+  }
+  
+  .movie-list-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .movie-list {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+  }
+  
+  .movie-list-item {
+    margin-right: 30px;
+    position: relative;
+  }
+  
+  .movie-list-item:hover .movie-list-item-img {
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+  }
+  
+  .movie-list-item:hover .movie-list-item-title,
+  .movie-list-item:hover .movie-list-item-desc,
+  .movie-list-item:hover .movie-list-item-button {
+    opacity: 1;
+  }
+  
+  .movie-list-item-img {
+    transition: all 1s ease-in-out;
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+  .movie-list-item-title {
+    background-color: #333;
+    padding: 0 10px;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  
+  .movie-list-item-desc {
+    background-color: #333;
+    padding: 10px;
+    font-size: 14px;
+    position: absolute;
+    top: 30%;
+    left: 50px;
+    width: 230px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  
+  .movie-list-item-button {
+    padding: 10px;
+    background-color: #4dbf00;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+  }
+  
+  .arrow {
+    font-size: 120px;
+    position: absolute;
+    top: 90px;
+    right: 0;
+    color: lightgray;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  
+  .container.active {
+    background-color: white;
+  }
+  
+  .movie-list-title.active {
+    color: black;
+  }
+  
+  .navbar-container.active {
+    background-color: white;
+  
+    color: black;
+  }
+  
+  .sidebar.active{
+      background-color: white;
+  }
+  
+  .left-menu-icon.active{
+      color: black;
+  }
+  
+  .toggle.active{
+      background-color: black;
+  }
+  
+  .toggle-ball.active{
+      background-color: white;
+      transform: translateX(-20px);
+  }
+  
+  @media only screen and (max-width: 940px){
+      .menu-container{
+          display: none;
+      }
+  }
+
+  .video-player {
+    position: fixed; /* Makes the player stay on top of other elements */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75); /* Add a semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Ensures the player is on top of other content */
+    opacity: 0; /* Initial opacity for smooth transition */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .video-player.visible {
+    opacity: 1; /* Make the player visible on state change */
+  }
+  .less-than-button {
+    position: fixed; /* Allows positioning the circle absolutely */
+    padding: 20px; /* Adjust padding for a bigger button */
+    border: none; /* Remove default button border */
+    background: none; /* Remove default button background */
+    cursor: pointer; /* Indicate this is a button */
+    /* Increase button size, adjust as needed */
+    width: 80px;
+    height: 80px;
+    /* Center the symbol vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px; /* Adjust the vertical position as needed */
+  left: 20px; /* Adjust the horizontal position as needed */
+  z-index: 100;
+  }
+  
+  .less-than-button::before { /* Pseudo-element for the circle background */
+    content: ''; /* No content, just for styling */
+    position: absolute; /* Positioned absolutely within the button */
+    top: 0;
+    left: 0;
+    width: 100%; /* Matches the width of the button */
+    height: 100%; /* Matches the height of the button */
+    border-radius: 50%; /* Creates a circle */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+    transition: background-color 0.2s ease-in-out; /* Transition for hover effect */
+  }
+  
+  .less-than-button:hover::before {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker black on hover */
+  }
+  
+  .less-than-symbol {
+    color: white; /* White color for the "<" symbol */
+    font-size: 30px; /* Adjust font size for the symbol as needed */
+  }
+  
+
+
+  .search_container {
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-color: #333;
+    float: right;
+    z-index: 2;
+    position: absolute  ;
+    right: 3%;
+  }
+  
+  .search_box {
+    position: relative;
+  }
+  
+  .search_input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #444;
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .search_results {
+    margin-top: 20px;
+    max-height: 222px;
+    overflow: auto;
+    z-index: 33;
+  }
+  
+  .search_results ul {
+    list-style-type: none;
+    padding: 0;
+  
+  }
+  
+  .search_results ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
